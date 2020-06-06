@@ -21,10 +21,26 @@
 	
 			  			<h:outputLabel value="Data de Lançamento:" for="dataLancamento"/>
 			  			<h:inputText id="dataLancamento" value="#{livroBean.livro.dataLancamento}"/>
-			  			
-			  			<h:commandButton value="Gravar" action="#{livroBean.gravar}"/>
 	  				</h:panelGrid>
 	  			</fieldset>
+	  			
+	  			<fieldset>
+	  				<legend>Dados do Livro</legend>
+	  				<h:outputLabel value="Selecione Autor:" for="autor"/>
+	  				<h:selectOneMenu value="#{livroBean.autorId}">
+	  					<f:selectItems value="#{livroBean.autores}" var="autor" itemLabel="#{autor.nome}" itemValue="#{autor.id}"/>
+	  				</h:selectOneMenu>
+	  				
+	  				<h:commandButton value="Gravar Autor" action="#{livroBean.gravarAutor}"/>
+	  				
+	  				<h:dataTable value="#{livroBean.autoresDoLivro}" var="autor">
+	  					<h:column>
+	  						<h:outputText value="#{autor.nome}"/>
+	  					</h:column>
+	  				</h:dataTable>
+	  			</fieldset>
+	  			<br/>
+	  			<h:commandButton value="Gravar" action="#{livroBean.gravar}"/>	
 	  		</h:form>
 	  </h:body>
 
