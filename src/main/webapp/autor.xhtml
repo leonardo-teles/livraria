@@ -11,7 +11,10 @@
 	  				<legend>Dados do Autor</legend>
 	  				<h:panelGrid columns="2">
 			  			<h:outputLabel value="Nome:" for="nome"/>
-			  			<h:inputText id="nome" value="#{autorBean.autor.nome}"/>
+			  			<h:inputText id="nome" value="#{autorBean.autor.nome}" required="true">
+			  				<f:validateLength minimum="5"/>
+			  			</h:inputText>
+			  			<h:message for="nome"/>
 			  			
 			  			<h:commandButton value="Gravar" action="#{autorBean.gravar}"/>
 	  				</h:panelGrid>
