@@ -38,13 +38,17 @@ public class LivroBean implements Serializable {
 		System.out.println("Gravando livro " + this.livro.titulo);
 		
 		if (livro.getAutores().isEmpty()) {
-			//throw new RuntimeException("Livro de ter pelo menos um autor");
 			FacesContext.getCurrentInstance().addMessage("autor", new FacesMessage("Livro deve ter pelo menos um autor"));
 		}
 		
 		new DAO<Livro>(Livro.class).adiciona(this.livro);
 		
 		this.livro = new Livro();
+	}
+	
+	public String formAutor() {
+		System.out.println("chamando o formulário do autor");
+		return "autor?faces-redirect=true";
 	}
 	
 	public void gravarAutor() {
