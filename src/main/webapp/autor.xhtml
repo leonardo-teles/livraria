@@ -13,18 +13,48 @@
 		
 		<ui:define name="conteudo">
 	  		<h:form>
+	  		
+	  			<h:messages id="messages"/>
+	  			
 	  			<fieldset>
 	  				<legend>Dados do Autor</legend>
 	  				<h:panelGrid columns="2">
+	  				
 			  			<h:outputLabel value="Nome:" for="nome"/>
 			  			<h:inputText id="nome" value="#{autorBean.autor.nome}" required="true">
 			  				<f:validateLength minimum="5"/>
 			  			</h:inputText>
 			  			<h:message for="nome"/>
 			  			
-			  			<h:commandButton value="Gravar" action="#{autorBean.gravar}"/>
 	  				</h:panelGrid>
 	  			</fieldset>
+	  			<br/>
+	  			<h:commandButton value="Gravar" action="#{autorBean.gravar}">
+	  				<f:ajax execute="@form" render="@form :formTabelaAutores:tabelaAutores"/>
+	  			</h:commandButton>
+	  		</h:form>
+	  		
+	  		<h:form id="formTabelaAutores">
+	  			<h:dataTable value="#{autorBean.autores}" var="autor" id="tabelaAutores">
+	  			
+		  			<h:column>
+		  				<f:facet name="header">Nome</f:facet>
+		  				<h:outputText value="#{autor.nome}"/>
+		  			</h:column>
+
+		  			<h:column>
+		  				<f:facet name="header">Alterar</f:facet>
+		  				<h:commandLink value="Alterar">
+		  					<f:setPropertyActionListener value="#{autor}" target="#{autorBean.autor}"/>
+		  				</h:commandLink>
+		  			</h:column>
+		  			
+		  			<h:column>
+		  				<f:facet name="header">Remover</f:facet>
+		  				<h:commandLink value="Remover" action="#{autorBean.remover(autor)}"/>
+		  			</h:column>
+	  			
+	  			</h:dataTable>
 	  		</h:form>
 		</ui:define>
 		
