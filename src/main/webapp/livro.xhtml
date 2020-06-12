@@ -7,6 +7,11 @@
 	  
 	  <ui:composition template="_template.xhtml">
 	  
+	  	<f:metadata>
+	  		<f:viewParam name="livroId" value="#{livroBean.livroId}"/>
+	  		<f:viewAction action="#{livroBean.carregarLivroPeloId}" if="#{param.livroId != null}"/>
+	  	</f:metadata>
+	  
 		<ui:define name="titulo">
 			Novo Livro		
 		</ui:define>
@@ -72,6 +77,11 @@
 	  		
 	  		<h:form id="formTabelaLivros">
 		  		<h:dataTable value="#{livroBean.livros}" var="livro" id="tabelaLivros">
+
+		  			<h:column>
+		  				<f:facet name="header">Id</f:facet>
+		  				<h:outputText value="#{livro.id}"/>
+		  			</h:column>
 		  		
 		  			<h:column>
 		  				<f:facet name="header">Título</f:facet>

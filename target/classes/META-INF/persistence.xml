@@ -13,13 +13,13 @@
 		<class>br.com.alura.modelo.Autor</class>
 
 		<properties>
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/livraria?useSSL=false"/>
 			<property name="javax.persistence.jdbc.user" value="leonardo"/>
 			<property name="javax.persistence.jdbc.password" value="senha"/>
 
 			<property name="hibernate.hbm2ddl.auto" value="update"/>
-			<property name="hibernate.show_sql" value="false"/>
+			<property name="hibernate.show_sql" value="true"/>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
 		</properties>
 	</persistence-unit>

@@ -66,7 +66,4 @@ public class AutorBean implements Serializable {
 	public void setAutorId(Integer autorId) {
 		this.autorId = autorId;
 	}
-	
-	
-	
 }
