@@ -7,6 +7,11 @@
 	  
 	  <ui:composition template="_template.xhtml">
 	  
+	  	<f:metadata>
+	  		<f:viewParam name="autorId" value="#{autorBean.autorId}"/>
+	  		<f:viewAction action="#{autorBean.carregarAutorPeloId}" if="#{param.autorId != null}"/>
+	  	</f:metadata>
+	  
 	  	<ui:define name="titulo">
 			Novo Autor		
 		</ui:define>
@@ -36,6 +41,11 @@
 	  		
 	  		<h:form id="formTabelaAutores">
 	  			<h:dataTable value="#{autorBean.autores}" var="autor" id="tabelaAutores">
+
+		  			<h:column>
+		  				<f:facet name="header">Id</f:facet>
+		  				<h:outputText value="#{autor.id}"/>
+		  			</h:column>
 	  			
 		  			<h:column>
 		  				<f:facet name="header">Nome</f:facet>
