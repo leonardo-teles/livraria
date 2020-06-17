@@ -2,6 +2,7 @@ package br.com.alura.bean;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 
 import br.com.alura.dao.UsuarioDao;
 import br.com.alura.modelo.Usuario;
@@ -17,6 +18,9 @@ public class LoginBean {
 		
 		boolean existe = new UsuarioDao().existe(this.usuario);
 		if (existe) {
+			FacesContext context = FacesContext.getCurrentInstance();
+			context.getExternalContext().getSessionMap().put("usuarioLogado", this.usuario);
+			
 			return "livro?faces-redirect=true";
 		}
 		
