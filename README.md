@@ -15,6 +15,31 @@ Tópicos Abordados:
   - Autenticação do usuário
   - Autorização pelo PhaseListener
   - Logout e o escopo Flash
+  
+# Java e JSF 2 - II: Componentes ricos com Primefaces
 
-Certificados: <a href="https://cursos.alura.com.br/certificate/735a5cc9-4314-4531-88a7-f9348cf2763b" rel="noopener" targer="_blank">I</a>
+Tópicos Abordados:
+
+  - Começando com Primefaces
+  - Componentes ricos no formulário
+  - Dados tabulares com Primefaces 
+  - Melhorando a navegação com menus
+  - Aplicando temas
+  - Gráficos com Primefaces
+
+Certificados: <a href="https://cursos.alura.com.br/certificate/735a5cc9-4314-4531-88a7-f9348cf2763b" rel="noopener" targer="_blank">I</a>, <a href="https://cursos.alura.com.br/certificate/3b7ac17a-3eb3-43f7-a648-0a524805183e" rel="noopener" targer="_blank">II</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   

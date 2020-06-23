@@ -29,6 +29,7 @@
 			    <p:menuButton value="Menu" rendered="#{usuarioLogado != null}">
 			        <p:menuitem value="Livros" action="livro?faces-redirect=true" icon="fa fa-fw fa-book"/>
 			        <p:menuitem value="Autores" action="autor?faces-redirect=true" icon="fa fa-fw fa-user"/>
+			        <p:menuitem value="Vendas" action="vendas?faces-redirect=true" icon="fa fa-fw fa-shopping-cart"/>
 			        <p:separator />
 			        <p:menuitem value="Logout" action="#{loginBean.deslogar}" icon="fa fa-fw fa-sign-out"/>
 			    </p:menuButton>
@@ -43,11 +44,5 @@
 	  		<ui:insert name="conteudo"></ui:insert>
 	  	</div>
 	  	
-	  	<div id="rodape">
-	  		Copyright 2020
-	  		<ui:insert name="texto"></ui:insert>
-	  	</div>
-	  	
 	  </h:body>
-
 </html>
