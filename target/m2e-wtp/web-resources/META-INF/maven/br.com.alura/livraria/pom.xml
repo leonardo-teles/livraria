@@ -58,9 +58,26 @@
 			<artifactId>primefaces</artifactId>
 			<version>6.0</version>
 			<scope>compile</scope>
-		</dependency>	  	
+		</dependency>	 
+		
+		<!-- Primefaces Themes - All Themes -->
+		<dependency>
+		    <groupId>org.primefaces.themes</groupId>
+		    <artifactId>all-themes</artifactId>
+		    <version>1.0.10</version>
+		</dependency>
   	
   </dependencies>
+  
+  <!-- Adicionado paar poder fazer o tema do primefaces funcionar -->
+  <repositories>
+	<repository>
+		<id>prime-repo</id>
+		<name>PrimeFaces Maven Repository</name>
+		<url>http://repository.primefaces.org</url>
+		<layout>default</layout>
+	</repository>
+  </repositories>     
   
   <build>
   	<plugins>
