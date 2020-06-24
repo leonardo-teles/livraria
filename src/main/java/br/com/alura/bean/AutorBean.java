@@ -4,14 +4,14 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 
 import br.com.alura.dao.DAO;
 import br.com.alura.modelo.Autor;
 
-@ManagedBean
+@Named
 @ViewScoped
 public class AutorBean implements Serializable {
 	private static final long serialVersionUID = 1L;

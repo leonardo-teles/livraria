@@ -43,6 +43,14 @@
 		    <artifactId>hibernate-entitymanager</artifactId>
 		    <version>5.4.17.Final</version>
 		</dependency>
+		
+		<!-- Weld Servlet - Implementação CDI -->
+		<dependency>
+		    <groupId>org.jboss.weld.servlet</groupId>
+		    <artifactId>weld-servlet</artifactId>
+		    <version>2.3.3.Final</version>
+		    <scope>compile</scope>
+		</dependency>
 	  	
 	  	<!-- MySQL -->
 	  	<dependency>

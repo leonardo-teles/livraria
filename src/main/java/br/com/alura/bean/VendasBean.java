@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 
 import org.primefaces.model.chart.BarChartModel;
 import org.primefaces.model.chart.ChartSeries;
@@ -15,7 +15,7 @@ import br.com.alura.dao.DAO;
 import br.com.alura.modelo.Livro;
 import br.com.alura.modelo.Venda;
 
-@ManagedBean
+@Named
 @ViewScoped
 public class VendasBean implements Serializable {
 	private static final long serialVersionUID = 1L;
