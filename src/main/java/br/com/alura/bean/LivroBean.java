@@ -18,6 +18,7 @@ import br.com.alura.dao.LivroDao;
 import br.com.alura.modelo.Autor;
 import br.com.alura.modelo.Livro;
 import br.com.alura.modelo.LivroDataModel;
+import br.com.alura.tx.Transacional;
 
 @Named
 @ViewScoped
@@ -61,6 +62,7 @@ public class LivroBean implements Serializable {
 		this.livro = livroDao.buscaPorId(livroId);
 	}
 	
+	@Transacional
 	public void gravar() {
 		System.out.println("Gravando livro " + this.livro.getTitulo());
 		
@@ -78,6 +80,7 @@ public class LivroBean implements Serializable {
 		this.livro = new Livro();
 	}
 	
+	@Transacional
 	public void remover(Livro livro) {
 		System.out.println("Removendo livro: " + livro.getTitulo());
 		livroDao.remove(livro);
