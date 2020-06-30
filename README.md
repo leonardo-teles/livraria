@@ -1,4 +1,4 @@
-# Java e JSF I: Sua aplicação web com JSF2 
+# Java e JSF 2 - I: Sua aplicação web com JSF2 
 
 Tópicos Abordados:
 
@@ -26,8 +26,20 @@ Tópicos Abordados:
   - Melhorando a navegação com menus
   - Aplicando temas
   - Gráficos com Primefaces
+  
+# Java e JSF 2 - III: Integração com CDI
 
-Certificados: <a href="https://cursos.alura.com.br/certificate/735a5cc9-4314-4531-88a7-f9348cf2763b" rel="noopener" targer="_blank">I</a>, <a href="https://cursos.alura.com.br/certificate/3b7ac17a-3eb3-43f7-a648-0a524805183e" rel="noopener" targer="_blank">II</a>
+Tópicos Abordados:
+
+  - Integração do CDI com JSF 2
+  - Injeção de dependências com CDI
+  - Gerenciando transações com CDI 
+  - Completando a aplicação
+  - Integração com outras tecnologias: Maven, Spring e EJB
+  
+  
+
+Certificados: <a href="https://cursos.alura.com.br/certificate/735a5cc9-4314-4531-88a7-f9348cf2763b" rel="noopener" targer="_blank">I</a>, <a href="https://cursos.alura.com.br/certificate/3b7ac17a-3eb3-43f7-a648-0a524805183e" rel="noopener" targer="_blank">II</a> e <a href="https://cursos.alura.com.br/certificate/6c831691-12c6-4aa1-a123-07dbd1e61dd1" rel="noopener" targer="_blank">III</a>
 
 
 
