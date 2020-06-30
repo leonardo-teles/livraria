@@ -18,7 +18,7 @@
 		</ui:define>
 		
 		<ui:define name="conteudo">
-	  		<h:form>
+	  		<h:form id="formLivro">
 	  			
 	  			<p:messages id="messages"/>
 	  			
@@ -61,7 +61,6 @@
 		  				<p:commandLink value="ou cadastrar Novo Autor" action="#{livroBean.formAutor}" immediate="true" update="@all"/>
 	  				</p:panelGrid>
 	  			
-	  				
 	  				<p:dataTable value="#{livroBean.autoresDoLivro}" var="autor" id="tabelaAutores" emptyMessage="Nenhum autor">
 	  					<p:column headerText="Nome">
 	  						<h:outputText value="#{autor.nome}"/>
@@ -72,8 +71,11 @@
 	  					</p:column>
 	  				</p:dataTable>
 	  			</p:fieldset>
-	  			<br/>
+	  			
+	  			<p:spacer/>
 	  			<p:commandButton value="Gravar" action="#{livroBean.gravar}" process="@form" update="@form :formTabelaLivros:tabelaLivros"/>
+	  			<p:spacer/>
+	  			
 	  		</h:form>
 	  		
 	  		<h:form id="formTabelaLivros">
@@ -113,16 +115,12 @@
 		  				</h:outputText>
 		  			</p:column>
 
-		  			<p:column>
-		  				<f:facet name="header">Alterar</f:facet>
-		  				<h:commandLink value="Alterar">
-		  					<f:setPropertyActionListener value="#{livro}" target="#{livroBean.livro}"/>
-		  				</h:commandLink>
+		  			<p:column headerText="Alterar">
+		  				<p:commandButton update=":formLivro" process="@this" value="alterar" actionListener="#{livroBean.carregar(livro)}" icon="fa fa-fw fa-edit"/>
 		  			</p:column>
 		  			
-		  			<p:column>
-		  				<f:facet name="header">Remover</f:facet>
-		  				<h:commandLink value="Remover" action="#{livroBean.remover(livro)}"/>
+		  			<p:column headerText="Remover">
+		  				<p:commandButton update="@form" process="@this" value="remover" actionListener="#{livroBean.remover(livro)}" icon="fa fa-fw fa-remove"/>
 		  			</p:column>
 		  			
 		  		</p:dataTable>

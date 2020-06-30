@@ -23,10 +23,8 @@ public class GerenciadorDeTransacao implements Serializable {
 		// abre transacao
 		manager.getTransaction().begin();
 		
-		
 		// chama os DAO's que precisam de um TX
 		Object resultado = contexto.proceed();
-		
 		
 		System.out.println("Comita a transação");
 		// commita a transacao

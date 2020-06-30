@@ -40,6 +40,9 @@ public class LivroBean implements Serializable {
 	@Inject
 	private LivroDataModel livroDataModel;
 	
+	@Inject
+	FacesContext context;
+	
 	private List<String> generos = Arrays.asList("Romance", "Drama", "Ação");
 
 	public List<Livro> getLivros() {
@@ -67,7 +70,7 @@ public class LivroBean implements Serializable {
 		System.out.println("Gravando livro " + this.livro.getTitulo());
 		
 		if (livro.getAutores().isEmpty()) {
-			FacesContext.getCurrentInstance().addMessage("autor", new FacesMessage("Livro deve ter pelo menos um autor"));
+			context.addMessage("autor", new FacesMessage("Livro deve ter pelo menos um autor"));
 		}
 		
 		if (this.livro.getId() == null) {
@@ -88,6 +91,11 @@ public class LivroBean implements Serializable {
 	
 	public void removerAutorDoLivro(Autor autor) {
 		this.livro.removeAutor(autor);
+	}
+	
+	public void carregar(Livro livro) {
+		System.out.println("Carregando livro");
+		this.livro = this.livroDao.buscaPorId(livro.getId());
 	}
 	
 	public String formAutor() {
